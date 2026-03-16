@@ -17,22 +17,26 @@ To perform 8-bit arithmetic operations such as addition, subtraction, multiplica
 5.	Store the carry (if any) in 41H.
 
 ## Program:
-```
-ORG 0000H
-MOV A, 30H     
-ADD A, 31H    
-MOV 40H, A 
-JNC NEXT 
-MOV 41H, #01H
-SJMP END_PROGRAM
-NEXT: MOV 41H, #00H
-END_PROGRAM: NOP
-END
-```
+ORG 0000H;<br>
+MOV  A,30H;<br>
+ADD A,31H;<br>
+MOV 40H,A;<br>
+JNC NEXT;<br>
+MOV 41H,#01H;<br>
+SJMP END_PROGRAM;<br>
+NEXT:MOV 41H,#00H;<br>
+END_PROGRAM:NOP;<br>
+END<br>
+
 
 ## Output:
-<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/21bd48e1-38fc-4fa5-bba8-b0fff7e33055" />
-<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/d622d80a-fe0b-4292-8f8c-cf06123d0a6a" />
+<img width="1914" height="1114" alt="Screenshot 2025-10-27 133551" src="https://github.com/user-attachments/assets/252dac63-1e62-423e-a4d3-d84710fad662" />
+
+<img width="952" height="181" alt="Screenshot 2025-10-27 133616" src="https://github.com/user-attachments/assets/0398e102-27b8-4150-a895-4769be04faa1" />
+
+<img width="235" height="491" alt="Screenshot 2025-10-27 133633" src="https://github.com/user-attachments/assets/f4eaf3ea-54a9-4e6c-ade5-d0281d5a1c71" />
+
+
 
    
 ## For Subtraction:
@@ -42,22 +46,32 @@ END
 4.	Store the result in memory location 40H.
 
 ## Program:
-```
-ORG 0000H
-MOV A, 30H
-SUBB A, 31H
-MOV 40H, A
-JNC NEXT
-MOV 41H, #01H
-SJMP END_PROGRAM
-NEXT: MOV 41H, #00H
-END_PROGRAM: NOP
-END
-```
+ORG 0000H;<br>
+MOV A,30H;<br>
+SUBB A,31H;<br>
+MOV 40H,A;<br>
+JNC NEXT ;<br>
+MOV 41H,#01H;<br>
+SJMP END_PROGRAM;<br>
+NEXT:MOV 41H,#00H;<br?
+END_PROGRAM:NOP;<br>
+END<br>
+
+
+
 
 ## Output:
-<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/bcf68f1b-5c78-4ddf-bfb8-a2de0a3a0cc9" />
-<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/91b3f022-16ae-4f61-be52-6a5edb94d1f2" />
+
+<img width="1917" height="1106" alt="Screenshot 2025-10-27 141609" src="https://github.com/user-attachments/assets/2c8f3221-8e37-4240-ba31-f8173fbff4df" />
+
+
+<img width="952" height="188" alt="Screenshot 2025-10-27 141653" src="https://github.com/user-attachments/assets/bda8b908-be0d-4326-afed-9d757426cbf4" />
+
+
+<img width="241" height="452" alt="Screenshot 2025-10-27 141705" src="https://github.com/user-attachments/assets/0ac3a052-85f6-4305-a961-4ead14523449" />
+
+
+
 
 ## For Multiplication:
 1.	Load the first number from memory location 30H into register A.
@@ -67,22 +81,30 @@ END
 5.	Store the higher byte of the result in memory location 41H.
 
 ## Program:
-```
-ORG 0000H
-MOV A, 30H 
-MOV B, 31H
-MUL AB
-MOV 40H, A 
-MOV 41H, B
-END
-```
+ORG 0000H;<br.
+MOV A,30H;<br>
+MOV B,31H;,br>
+MUL AB;<br>
+MOV 40H,A;<br>
+MOV 41H,B;<br>
+END<br>
+
 
 ## Output:
-<img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/399c4ab6-c58c-41ca-a293-d010b2e46d9e" />
-<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/79e572cb-7e8f-4180-84af-7fd950c09ac2" />
+
+<img width="1914" height="1091" alt="Screenshot 2025-10-27 143240" src="https://github.com/user-attachments/assets/bde9da2c-3c5d-4b29-a544-2637362e511f" />
 
 
-## For Division:
+<img width="953" height="271" alt="Screenshot 2025-10-27 143311" src="https://github.com/user-attachments/assets/e503d9d9-9e77-4fa3-8f1f-e09c4305eb1a" />
+
+
+<img width="242" height="490" alt="Screenshot 2025-10-27 143321" src="https://github.com/user-attachments/assets/ace8e3f3-ed16-4d6e-b27c-5527b79bafe4" />
+
+
+
+
+
+## For Division
 1.	Load the dividend from memory location 30H into register A.
 2.	Load the divisor from memory location 31H into register B.
 3.	Divide A by B.
@@ -91,19 +113,28 @@ END
 
 
 ## Program:
-```
-ORG 0000H
-MOV A, 30H
-MOV B, 31H
-DIV AB
-MOV 40H, A
-MOV 41H, B 
-END
-```
+ORG 0000H;<br>
+MOV A,30H;,br>
+MOV B,31H;<br>
+DIV AB;<br>
+MOV 40H,A;<br>
+MOV 41H,B;<br>
+END<br>
+
 
 ## Output:
-<img width="1918" height="1135" alt="image" src="https://github.com/user-attachments/assets/25c5eb00-1681-48b9-b245-547c304078b8" />
-<img width="1915" height="1135" alt="image" src="https://github.com/user-attachments/assets/45cab786-1956-418a-9309-c3464fc44812" />
+
+<img width="1916" height="1098" alt="Screenshot 2025-10-27 144626" src="https://github.com/user-attachments/assets/ce87ffe5-f9f7-44a2-b9ab-c64ee1906f4f" />
+
+<img width="955" height="270" alt="Screenshot 2025-10-27 144650" src="https://github.com/user-attachments/assets/397ca9b3-e8c8-4b15-8f8e-3943f4fe14b8" />
+
+
+<img width="238" height="546" alt="Screenshot 2025-10-27 144701" src="https://github.com/user-attachments/assets/9fc50952-60c2-4c59-8042-b82f87083b9a" />
+
+
+
+
+
 
 
 ## Result:
